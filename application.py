@@ -185,4 +185,4 @@ if __name__ == "__main__":
     inventory = {}
     updateList()
     createcsv()
-    app.run(debug = True)
+    app.run()
