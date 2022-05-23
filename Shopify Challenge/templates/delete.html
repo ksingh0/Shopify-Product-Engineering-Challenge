@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Delete Inventory{% endblock %}
+{% block content %}
+<!doctype html>
+<p>Please enter the item and city for the inventory you would like to delete from the list.</p>
+<p>Please note that the only valid cities for this application are: Toronto, Vancouver, Calgary, Winnipeg, and Montreal (Case sensitive)</p>
+<form action = "#" method = "post" style="text-align: center; padding-top: 2.5em">
+  <p>Item:<span style = 'margin-left: 1em;'><input type = "text" name = "item" /></span>
+      </p>
+  <p>City:<span style = 'margin-left: 1em;'><input type = "text" name = "city" /></span>
+      </p>
+      <p>
+  <input style = "text-align: center; margin-bottom: 0.25em;" class = "btn btn-primary" type = "submit" name = "submit" />
+</p>
+<style>
+  table{
+      width: 75%;
+      margin-left: auto; 
+      margin-right: auto;
+      border-collapse: collapse;
+      font-size: 0.9em;
+      /* font-family: sans-serif; */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  } 
+</style>
+{% include "inventory.html" %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+</form>
+{% endblock %}
